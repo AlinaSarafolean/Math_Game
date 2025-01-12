@@ -34,5 +34,15 @@ class MainActivity : ComponentActivity() {
             val intent = Intent(this@MainActivity, GameActivity::class.java)
             startActivity(intent)
         }
+
+        subtraction.setOnClickListener {
+            val intent = Intent(this@MainActivity, SubstractionActivity::class.java)
+            startActivity(intent)
+        }
+
+        multi.setOnClickListener {
+            val intent = Intent(this@MainActivity, MultiActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

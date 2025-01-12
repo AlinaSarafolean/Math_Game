@@ -11,7 +11,7 @@ import java.util.*
 import kotlin.random.Random
 import android.content.Intent
 
-class GameActivity : AppCompatActivity() {
+class MultiActivity : AppCompatActivity() {
 
     lateinit var textScore: TextView
     lateinit var textLife: TextView
@@ -82,7 +82,7 @@ class GameActivity : AppCompatActivity() {
 
             if (userLife == 0){
                 Toast.makeText(applicationContext, "Game Over", Toast.LENGTH_LONG).show()
-                val intent = Intent(this@GameActivity,ResultActivity::class.java)
+                val intent = Intent(this@MultiActivity,ResultActivity::class.java)
                 intent.putExtra("score", userScore)
                 startActivity(intent)
                 finish()
@@ -95,11 +95,11 @@ class GameActivity : AppCompatActivity() {
 
     // Function to continue the game by generating a new question
     private fun gameContinue() {
-        val number1 = Random.nextInt(0, 100)
-        val number2 = Random.nextInt(0, 100)
+        val number1 = Random.nextInt(0, 10)
+        val number2 = Random.nextInt(0, 10)
 
-        textQuestion.text = "$number1 + $number2"
-        correctAnswer = number1 + number2
+        textQuestion.text = "$number1 * $number2"
+        correctAnswer = number1 * number2
 
         startTimer()  // Start the timer for the new question
     }
